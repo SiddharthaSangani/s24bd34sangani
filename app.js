@@ -6,7 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var denRouter = require('./routes/den');
+var denRouter = require('./routes/dogcookies');
 var gridRouter = require('./routes/grid');
 var randomRouter = require('./routes/pick');
 
@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/den', denRouter);
+app.use('/cookies', denRouter);
 app.use('/grid', gridRouter);
 app.use('/random',randomRouter);
 
