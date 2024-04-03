@@ -1,9 +1,6 @@
 var express = require('express');
+const dogcookies_controlers= require('../controllers/dogcookies');
 var router = express.Router();
-
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('dogcookies', { title: 'Search Result Dog Cookies' });
-});
-
+/* GET costumes */
+router.get('/', dogcookies_controlers.dogcookies_view_all_Page );
 module.exports = router;
