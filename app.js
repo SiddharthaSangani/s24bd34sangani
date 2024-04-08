@@ -30,6 +30,7 @@ app.use('/cookies', denRouter);
 app.use('/grid', gridRouter);
 app.use('/random',randomRouter);
 app.use('/resource',resourceRouter);
+app.use('/detail', denRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

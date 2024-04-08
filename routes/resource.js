@@ -16,5 +16,8 @@ router.put('/dogcookies/:id', dogcookies_controller.dogcookies_update_put);
 // GET request for one dogcookies.
 router.get('/dogcookies/:id', dogcookies_controller.dogcookies_detail);
 // GET request for list of all dogcookies items.
+//router.get('/create', dogcookies_controller.dogcookies_create_Page);
+router.get('/detail', dogcookies_controller.dogcookies_view_one_Page);
 router.get('/dogcookies', dogcookies_controller.dogcookies_list);
+
 module.exports = router;
