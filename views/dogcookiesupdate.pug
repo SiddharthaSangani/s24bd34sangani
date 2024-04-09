@@ -1,39 +1,42 @@
 extends layout
 block content
   h1= title
-  - let dogcookies_id = toShow._id
-  - let cookies_name = toShow.cookies_name
-  - let cookies_for = toShow.cookies_for
-  - let cost = toShow.cost
-  div.row(class='mb-2')
-    div.mr-1 ID is
-    div #{dogcookies_id}
-  - let actionid = "/resource/dogcookies/" + dogcookies_id
-  form(id='dogcookiesForm', action= actionid, method="PUT")
-    div.form-group
-      label.dogcookiesAttr(for='cookies_name') dogcookies name
-      input#cookies_name(type='text', name='cookies_name', value= cookies_name )
-    div.form-group
-      label.dogcookiesAttr(for='cookies_for') dogcookies for
-      input#cookies_for(type='text', name='cookies_for', value= cookies_for )
-    div.form-group
-      label.dogcookiesAttr(for='cost') cookie cost
-      input#cost(type='number', name='cost', value= cost )
-    input(type="submit")
-  script.
-    document.forms['dogcookiesForm'].addEventListener('submit', (event) => {
-      event.preventDefault();
-      // TODO do something here to show user that form is being submitted
-      fetch(event.target.action, {
-        method: 'PUT',
-        body: new URLSearchParams(new FormData(event.target)) // event.target is the form
-      }).then((resp) => {
-        return resp.json(); // or resp.text() or whatever the server sends
-      }).then((body) => {
-        alert("Update succeeded")
-        // TODO handle body
-      }).catch((error) => {
-        // TODO handle error
-        alert("Update failed " + error )
-      });
-    });
+  if (toShow == null)
+    h2 No instance to update
+  else
+    - let dogcookies_id = toShow._id
+    - let cookies_name = toShow.cookies_name
+    - let cookies_for = toShow.cookies_for
+    - let cost = toShow.cost
+    div.row(class='mb-2')
+        div.mr-1 ID is
+        div #{dogcookies_id}
+    - let actionid = "/resource/dogcookies/" + dogcookies_id
+    form(id='dogcookiesForm', action= actionid, method="PUT")
+        div.form-group
+        label.dogcookiesAttr(for='cookies_name') dogcookies name
+        input#cookies_name(type='text', name='cookies_name', value= cookies_name )
+        div.form-group
+        label.dogcookiesAttr(for='cookies_for') dogcookies for
+        input#cookies_for(type='text', name='cookies_for', value= cookies_for )
+        div.form-group
+        label.dogcookiesAttr(for='cost') cookie cost
+        input#cost(type='number', name='cost', value= cost )
+        input(type="submit")
+    script.
+        document.forms['dogcookiesForm'].addEventListener('submit', (event) => {
+        event.preventDefault();
+        // TODO do something here to show user that form is being submitted
+        fetch(event.target.action, {
+            method: 'PUT',
+            body: new URLSearchParams(new FormData(event.target)) // event.target is the form
+        }).then((resp) => {
+            return resp.json(); // or resp.text() or whatever the server sends
+        }).then((body) => {
+            alert("Update succeeded")
+            // TODO handle body
+        }).catch((error) => {
+            // TODO handle error
+            alert("Update failed " + error )
+        });
+        });

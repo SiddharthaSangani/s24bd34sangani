@@ -2,16 +2,22 @@ extends layout
 block content
   h1= title
   form(id='cookiesfrom', action="/resource/dogcookies", method="POST")
-    div.form-group
+    div.form-group(style="color: black; background-color: lavender;")
       label.cookiesAttr(for='cookies_name')  cookies type
       input#cookies_name(type='text', name='cookies_name')
-    div.form-group
+      br
+      br
+    div.form-group(style="color: red; background-color: lavender;")
       label.cookiesAttr(for='cookies_for') cookies for
       input#cookies_for(type='text', name='cookies_for')
-    div.form-group
+      br
+      br
+    div.form-group(style="color: brown; background-color: lavender;")
       label.cookiesAttr(for='cost') cost
       input#cost(type='number', name='cost')
-    input(type="submit")
+      br
+      br
+    input(type="submit")(style="color:white; background-color: black;")
   script.
     document.forms['cookiesfrom'].addEventListener('submit', (event) => {
       event.preventDefault();
