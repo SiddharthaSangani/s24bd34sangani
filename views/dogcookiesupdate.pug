@@ -14,13 +14,13 @@ block content
     - let actionid = "/resource/dogcookies/" + dogcookies_id
     form(id='dogcookiesForm', action= actionid, method="PUT")
         div.form-group
-        label.dogcookiesAttr(for='cookies_name') dogcookies name
+        label.cookiesAttr(for='cookies_name') dogcookies name
         input#cookies_name(type='text', name='cookies_name', value= cookies_name )
         div.form-group
-        label.dogcookiesAttr(for='cookies_for') dogcookies for
+        label.cookiesAttr(for='cookies_for') dogcookies for
         input#cookies_for(type='text', name='cookies_for', value= cookies_for )
         div.form-group
-        label.dogcookiesAttr(for='cost') cookie cost
+        label.cookiesAttr(for='cost') cookie cost
         input#cost(type='number', name='cost', value= cost )
         input(type="submit")
     script.

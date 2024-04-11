@@ -9,7 +9,7 @@ exports.dogcookies_list = async function (req, res) {
     catch (err) {
         res.status(500);
         res.send(`{"error": ${err}}`);
-    }
+    } 
 };
 // VIEWS
 // Handle a show all view
