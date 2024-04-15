@@ -55,4 +55,6 @@ router.get('/login', function(req, res) {
   router.get('/ping', function(req, res){
   res.status(200).send("pong!");
   });
-  module.exports = router;
+  /* GET update costume page */
+  // A little function to check if we have an authorized user and continue on or
+// redirect to login.

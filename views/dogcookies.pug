@@ -2,13 +2,23 @@ extends layout
 
 block content
   h1= title
+  
   - let items = results;
+  - let desti = `dispatch(\"/cookies/create\")`
+    button.btn( class="btn-primary", onclick= desti) Create
   div(class="container-fluid")
   div(class="row m-1")
+    
+    
     each item in items
       - let destination = `dispatch(\"/cookies/update?id=${item._id}\")`
+      - let destinatio = `dispatch(\"/cookies/detail?id=${item._id}\")`
+      - let destinati = `dispatch(\"/cookies/delete?id=${item._id}\")`
       div(class="row-sm-2", class="m-1") Item #{item.cookies_name}(#{item.cookies_for}) is #{item.cost}
       button.btn( class="btn-primary ml-1", onclick= destination) Update
+      button.btn( class="btn-primary ml-1", onclick= destinatio) Detail
+      button.btn( class="btn-primary ml-1", onclick= destinati) Delete
+      
   script.
     function dispatch(path){
       window.location.href=path}
