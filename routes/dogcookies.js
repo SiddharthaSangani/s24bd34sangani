@@ -16,6 +16,7 @@ const secured = (req, res, next) => {
     }
     res.redirect("/login");
 }
+router.get('/create',secured, dogcookies_controlers.dogcookies_create_Page);
 router.get('/delete',secured, dogcookies_controlers.dogcookies_delete_Page);
 router.get('/update', secured, dogcookies_controlers.dogcookies_update_Page);
 router.post('/login', passport.authenticate('local'), function(req, res) {
