@@ -80,7 +80,7 @@ ${JSON.stringify(req.body)}`)
             toUpdate.cookies_name = req.body.cookies_name;
         if (req.body.cost) toUpdate.cost = req.body.cost;
         if (req.body.cookies_for) toUpdate.cookies_for = req.body.cookies_for;
-        let result = await toUpdate.save();
+        let result  = await toUpdate.save();
         console.log("Sucess " + result)
         res.send(result)
     } catch (err) {
